@@ -10,13 +10,13 @@ const NODE_ENV = process.env.NODE_ENV as Environments;
 const config = {
   development: {
     env: "development",
-    port: process.env.DEV_PORT,
-    dbUrl: process.env.DEV_DB_URL,
+    port: process.env.PROD_PORT,
+    dbUrl: process.env.PROD_DB_URL,
   },
   staging: {
     env: "staging",
-    port: process.env.STAGE_PORT,
-    dbUrl: process.env.STAGE_DB_URL,
+    port: process.env.PROD_PORT,
+    dbUrl: process.env.PROD_DB_URL,
   },
   production: {
     env: "production",
