@@ -25,8 +25,8 @@ const config = {
   },
   test: {
     env: "test",
-    port: process.env.DEV_PORT,
-    dbUrl: process.env.DEV_DB_URL,
+    port: process.env.PROD_PORT,
+    dbUrl: process.env.PROD_DB_URL,
   },
 }[NODE_ENV];
 
@@ -38,6 +38,12 @@ if (!config.dbUrl) {
 
 export const sequelize = new Sequelize(config.dbUrl, {
   dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Disable strict cert validation
+    },
+  },
   logging: false,
 });
 
