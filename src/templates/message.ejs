@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>New Feedback Received</title>
+  </head>
+  <body
+    style="background-color: #f9fafb; padding: 2rem; font-family: sans-serif"
+  >
+    <div
+      style="
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+      "
+    >
+      <h2
+        style="
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #1f2937;
+          margin-bottom: 1.5rem;
+        "
+      >
+        📩 New Contact Message Received
+      </h2>
+
+      <p style="margin-bottom: 1rem; color: #4b5563">
+        <strong>Name:</strong> <%= name %>
+      </p>
+      <p style="margin-bottom: 1rem; color: #4b5563">
+        <strong>Email:</strong> <%= email %>
+      </p>
+      <p style="margin-bottom: 1.5rem; color: #4b5563">
+        <strong>Message:</strong>
+      </p>
+      <div
+        style="
+          background-color: #f3f4f6;
+          padding: 1rem;
+          border-radius: 0.375rem;
+          color: #374151;
+        "
+      >
+        <%= message %>
+      </div>
+
+      <p style="margin-top: 2rem; font-size: 0.875rem; color: #9ca3af">
+        This message was submitted from your website's contact form.
+      </p>
+    </div>
+  </body>
+</html>
