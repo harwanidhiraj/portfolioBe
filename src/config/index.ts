@@ -43,7 +43,6 @@ export const sequelize = new Sequelize(config.dbUrl, {
       require: true,
       rejectUnauthorized: false, // Disable strict cert validation
     },
-    family: 6,
   },
   logging: false,
 });
