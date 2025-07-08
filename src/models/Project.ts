@@ -45,7 +45,7 @@ Project.init(
     liveUrl: { type: DataTypes.STRING, allowNull: true },
     imageUrl: { type: DataTypes.STRING, allowNull: false },
     tech: { type: DataTypes.STRING, allowNull: false },
-    description: { type: DataTypes.STRING, allowNull: false },
+    description: { type: DataTypes.TEXT, allowNull: false },
   },
   {
     sequelize,

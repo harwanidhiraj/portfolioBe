@@ -39,7 +39,7 @@ Experience.init(
     title: { type: DataTypes.STRING, allowNull: false },
     companyName: { type: DataTypes.STRING, allowNull: false },
     duration: { type: DataTypes.STRING, allowNull: false },
-    description: { type: DataTypes.STRING, allowNull: false },
+    description: { type: DataTypes.TEXT, allowNull: false },
   },
   {
     sequelize,

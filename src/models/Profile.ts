@@ -12,7 +12,10 @@ interface ProfileAttributes {
   updatedAt?: Date;
 }
 
-type ProfileCreationAttributes = Optional<ProfileAttributes, 'id' | 'createdAt' | 'updatedAt'>
+type ProfileCreationAttributes = Optional<
+  ProfileAttributes,
+  "id" | "createdAt" | "updatedAt"
+>;
 
 class Profile
   extends Model<ProfileAttributes, ProfileCreationAttributes>
@@ -36,10 +39,10 @@ Profile.init(
       primaryKey: true,
     },
     name: { type: DataTypes.STRING, allowNull: false },
-    roles: { type: DataTypes.STRING, allowNull: false },
-    description: { type: DataTypes.STRING, allowNull: false },
-    resumeUrl: { type: DataTypes.STRING, allowNull: false },
-    imageUrl: { type: DataTypes.STRING, allowNull: false },
+    roles: { type: DataTypes.TEXT, allowNull: false },
+    description: { type: DataTypes.TEXT, allowNull: false },
+    resumeUrl: { type: DataTypes.TEXT, allowNull: false },
+    imageUrl: { type: DataTypes.TEXT, allowNull: false },
   },
   {
     sequelize,
