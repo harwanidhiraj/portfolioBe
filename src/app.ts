@@ -9,31 +9,18 @@ import helmet from "helmet";
 import { errorHandler } from "./middlewares/errorMiddleware";
 
 const app = express();
-
-const allowedOrigins = [
-  "https://portfolio-dhirajharwani.vercel.app/",
-  "http://localhost:3000",
-];
+app.use(express.json({ limit: "100kb" }));
+app.use(express.urlencoded({ limit: "100kb", extended: true }));
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
 
-app.options("*", cors());
-
-app.use(express.json({ limit: "100kb" }));
-app.use(express.urlencoded({ limit: "100kb", extended: true }));
 app.use(morgan("common"));
 app.use(cookieParser());
 app.use(
